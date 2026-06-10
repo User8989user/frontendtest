@@ -1,0 +1,6 @@
+com\example\pages\ClickPage.class
+com\example\pages\SampleAppPage.class
+com\example\pages\VisibilityPage.class
+com\example\pages\BasePage.class
+com\example\pages\DynamicIdPage.class
+com\example\pages\FramesPage.class
