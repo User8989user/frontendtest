@@ -1,5 +1,6 @@
 package com.example.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,9 +16,10 @@ public class ClickPage extends BasePage {
     }
 
     public void clickWithJavaScript() {
-        wait.until(d -> badButton.isDisplayed());
+        wait.until(d -> d.findElement(By.id("badButton")).isDisplayed());
+        WebElement button = driver.findElement(By.id("badButton"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", badButton);
+        js.executeScript("arguments[0].click();", button);
     }
 
     public String getButtonClass() {

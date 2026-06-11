@@ -11,7 +11,14 @@ public class FramesPage extends BasePage {
     }
 
     public void clickButtonInsideFrame() {
-        driver.switchTo().frame("frame1");
+        wait.until(d -> {
+            try {
+                d.switchTo().frame("frame1");
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        });
         WebElement button = wait.until(d -> d.findElement(By.cssSelector("button.btn-primary")));
         button.click();
         driver.switchTo().defaultContent();

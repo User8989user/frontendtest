@@ -6,15 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SampleAppPage extends BasePage {
-    @FindBy(css = "input[name='UserName']")
+    @FindBy(css = "input[placeholder='User Name']")
     private WebElement userNameInput;
-    
-    @FindBy(css = "input[name='Password']")
+
+    @FindBy(css = "input[placeholder='Password']")
     private WebElement passwordInput;
-    
+
     @FindBy(css = "button#login")
     private WebElement loginButton;
-    
+
     @FindBy(css = "label#loginstatus")
     private WebElement loginStatusLabel;
 

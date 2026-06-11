@@ -26,8 +26,8 @@ public class VisibilityPage extends BasePage {
 
     public boolean isRemovedButtonDisplayed() {
         try {
-            // Проверяем, существует ли элемент в DOM и виден ли
-            return removedButton.isDisplayed();
+            wait.until(d -> removedButton.isDisplayed());
+            return true;
         } catch (Exception e) {
             return false;
         }

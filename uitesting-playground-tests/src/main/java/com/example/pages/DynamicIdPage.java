@@ -12,11 +12,12 @@ public class DynamicIdPage extends BasePage {
     }
 
     public void clickDynamicButton() {
-        WebElement button = wait.until(d -> d.findElement(By.xpath("//button[contains(text(),'Button with Dynamic ID')]")));
+        WebElement button = wait
+                .until(d -> d.findElement(By.xpath("//button[normalize-space()='Button with Dynamic ID']")));
         button.click();
     }
 
     public boolean isButtonDisplayed() {
-        return driver.findElements(By.xpath("//button[contains(text(),'Button with Dynamic ID')]")).size() > 0;
+        return driver.findElements(By.xpath("//button[normalize-space()='Button with Dynamic ID']")).size() > 0;
     }
 }
