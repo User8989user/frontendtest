@@ -6,6 +6,7 @@
 
 
 ```bash 
+cd uitesting-playground-tests
 mvn clean compile
 
 mvn clean test

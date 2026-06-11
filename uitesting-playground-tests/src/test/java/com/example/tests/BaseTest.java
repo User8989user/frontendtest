@@ -15,6 +15,9 @@ public abstract class BaseTest {
 
     @BeforeEach
     public void setUp() {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+        
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();

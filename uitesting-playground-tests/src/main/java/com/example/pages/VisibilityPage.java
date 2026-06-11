@@ -1,10 +1,9 @@
 package com.example.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class VisibilityPage extends BasePage {
     @FindBy(id = "hideButton")
@@ -27,8 +26,9 @@ public class VisibilityPage extends BasePage {
 
     public boolean isRemovedButtonDisplayed() {
         try {
+            // Проверяем, существует ли элемент в DOM и виден ли
             return removedButton.isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException e) {
+        } catch (Exception e) {
             return false;
         }
     }

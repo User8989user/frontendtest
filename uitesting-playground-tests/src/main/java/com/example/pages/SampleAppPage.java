@@ -1,21 +1,20 @@
 package com.example.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class SampleAppPage extends BasePage {
-    @FindBy(name = "UserName")
+    @FindBy(css = "input[name='UserName']")
     private WebElement userNameInput;
-
-    @FindBy(name = "Password")
+    
+    @FindBy(css = "input[name='Password']")
     private WebElement passwordInput;
-
+    
     @FindBy(css = "button#login")
     private WebElement loginButton;
-
+    
     @FindBy(css = "label#loginstatus")
     private WebElement loginStatusLabel;
 
@@ -25,7 +24,9 @@ public class SampleAppPage extends BasePage {
     }
 
     public void login(String username, String password) {
+        userNameInput.clear();
         userNameInput.sendKeys(username);
+        passwordInput.clear();
         passwordInput.sendKeys(password);
         loginButton.click();
     }

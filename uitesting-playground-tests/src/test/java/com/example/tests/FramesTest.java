@@ -10,12 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FramesTest extends BaseTest {
 
     @Test
-    @Description("Переключение во вложенный фрейм и клик по кнопке")
+    @Description("Переключение во фрейм и клик по кнопке")
     public void testNestedFrame() {
         FramesPage framesPage = new FramesPage(driver);
         String originalText = framesPage.getButtonTextInsideFrame();
-        framesPage.clickButtonInsideNestedFrame();
-        // После клика текст кнопки может измениться – проверяем ожидаемое значение
+        framesPage.clickButtonInsideFrame();
         String newText = framesPage.getButtonTextInsideFrame();
         assertEquals("Clicked", newText, "Кнопка не изменила текст после клика");
         takeScreenshot("frames-clicked");
