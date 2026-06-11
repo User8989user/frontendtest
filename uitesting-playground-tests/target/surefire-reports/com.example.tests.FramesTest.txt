@@ -1,15 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: com.example.tests.FramesTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.468 s <<< FAILURE! -- in com.example.tests.FramesTest
-com.example.tests.FramesTest.testNestedFrame -- Time elapsed: 1.458 s <<< ERROR!
-org.openqa.selenium.NoSuchFrameException: 
-No frame element found by name or id frame1
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.70 s <<< FAILURE! -- in com.example.tests.FramesTest
+com.example.tests.FramesTest.testNestedFrame -- Time elapsed: 11.69 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for com.example.pages.FramesPage$$Lambda/0x000000009a3bef38@6f289728 (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '26.0.1'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:1124)
-	at com.example.pages.FramesPage.getButtonTextInsideFrame(FramesPage.java:28)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.103, chrome: {chromedriverVersion: 149.0.7827.55 (3188f8a607ae..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52187}, goog:processID: 13476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52187/devtoo..., se:cdpVersion: 149.0.7827.103, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 40e0d860424ca1363958b247eb82fd9e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.example.pages.FramesPage.getButtonTextInsideFrame(FramesPage.java:30)
 	at com.example.tests.FramesTest.testNestedFrame(FramesTest.java:16)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.example.tests.DynamicIdTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.526 s <<< FAILURE! -- in com.example.tests.DynamicIdTest
-com.example.tests.DynamicIdTest.testDynamicId -- Time elapsed: 1.505 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.586 s <<< FAILURE! -- in com.example.tests.DynamicIdTest
+com.example.tests.DynamicIdTest.testDynamicId -- Time elapsed: 1.533 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: Кнопка не найдена ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

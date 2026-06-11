@@ -1,10 +1,10 @@
 package com.example.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ClickPage extends BasePage {
     @FindBy(id = "badButton")
@@ -16,13 +16,13 @@ public class ClickPage extends BasePage {
     }
 
     public void clickWithJavaScript() {
-        wait.until(d -> d.findElement(By.id("badButton")).isDisplayed());
-        WebElement button = driver.findElement(By.id("badButton"));
+        wait.until(ExpectedConditions.elementToBeClickable(badButton));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", button);
+        js.executeScript("arguments[0].click();", badButton);
     }
 
-    public String getButtonClass() {
-        return badButton.getAttribute("class");
+    public boolean isButtonSuccess() {
+        // Ждём, пока класс изменится на btn-success
+        return wait.until(d -> badButton.getAttribute("class").contains("btn-success"));
     }
 }

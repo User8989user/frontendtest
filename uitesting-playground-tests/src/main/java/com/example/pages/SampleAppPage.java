@@ -1,15 +1,14 @@
 package com.example.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SampleAppPage extends BasePage {
-    @FindBy(css = "input[placeholder='User Name']")
+    @FindBy(name = "UserName")
     private WebElement userNameInput;
 
-    @FindBy(css = "input[placeholder='Password']")
+    @FindBy(name = "Password")
     private WebElement passwordInput;
 
     @FindBy(css = "button#login")
@@ -24,6 +23,7 @@ public class SampleAppPage extends BasePage {
     }
 
     public void login(String username, String password) {
+        wait.until(d -> userNameInput.isDisplayed());
         userNameInput.clear();
         userNameInput.sendKeys(username);
         passwordInput.clear();
